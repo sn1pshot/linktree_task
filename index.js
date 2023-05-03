@@ -1,0 +1,8 @@
+const express = require("express")
+const app = express()
+const UserRouter = require("./routes/users")
+const Linktree_Router = require("./routes/linktree")
+app.use(express.json())
+app.use('/users',UserRouter)
+app.use('/linktree',Linktree_Router)
+app.listen({port:process.env.PORT})
